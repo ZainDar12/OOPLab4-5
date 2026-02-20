@@ -1,36 +1,23 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 
-class Publication {
+class Book {
 public:
-    string bookName;
-    double cost;
-
-    Publication() {}
-    Publication(string n, double c) {
-        bookName = n;
-        cost = c;
-    }
+    string title;
+    double price;
 };
 
 int main() {
-
-    Publication libraryCollection[5] = {
-        Publication("C++ Basics", 29.99),
-        Publication("Data Structures", 39.99),
-        Publication("OOP Concepts", 34.99),
-        Publication("Algorithms", 44.99),
-        Publication("Design Patterns", 49.99)
+    Book library[5] = {
+        {"Physics", 500},
+        {"Chemistry", 450},
+        {"Mathematics", 600},
+        {"Biology", 400},
+        {"Computer Science", 750}
     };
 
-    int index = 0;
-    while (index < 5) {
-        cout << "Book Name: " << libraryCollection[index].bookName
-             << " | Cost: " << libraryCollection[index].cost << endl;
-        index++;
+    for (int i = 0; i < 5; i++) {
+        cout << library[i].title << " - Rs." << library[i].price << endl;
     }
-
-    return 0;
 }
