@@ -1,41 +1,23 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 
-class Processor {
-private:
-    int coreCount;
-
+class Engine {
 public:
-    Processor(int cores) {
-        coreCount = cores;
-    }
-
-    int getCores() const {
-        return coreCount;
-    }
+    int horsepower;
 };
 
-class Laptop {
-private:
-    string brandName;
-    Processor cpu;
-
+class Car {
 public:
-    Laptop(string brand, int cores)
-        : brandName(brand), cpu(cores) {}
-
-    void displaySpecs() const {
-        cout << "Brand: " << brandName << endl;
-        cout << "CPU Cores: " << cpu.getCores() << endl;
-    }
+    string model;
+    Engine engine;
 };
 
 int main() {
+    Car myCar;
+    myCar.model = "Honda Civic";
+    myCar.engine.horsepower = 180;
 
-    Laptop myDevice("Dell XPS", 8);
-    myDevice.displaySpecs();
-
-    return 0;
+    cout << "Model: " << myCar.model << endl;
+    cout << "Horsepower: " << myCar.engine.horsepower << endl;
 }
