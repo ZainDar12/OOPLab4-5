@@ -1,33 +1,27 @@
 #include <iostream>
 using namespace std;
 
-class SavingsProfile {
-private:
-    static double annualReturn;
-
+class BankAccount {
 public:
-    static void updateReturn(double newValue) {
-        annualReturn = newValue;
+    static float interestRate;
+
+    static void changeRate(float r) {
+        interestRate = r;
     }
 
-    void displayReturn() const {
-        cout << "Current Annual Return: " << annualReturn << "%" << endl;
+    void showRate() {
+        cout << "Interest Rate: " << interestRate << "%" << endl;
     }
 };
 
-double SavingsProfile::annualReturn = 3.5;
+float BankAccount::interestRate = 4.5;
 
 int main() {
+    BankAccount a1, a2, a3;
 
-    SavingsProfile customerOne;
-    SavingsProfile customerTwo;
-    SavingsProfile customerThree;
+    BankAccount::changeRate(7.0);
 
-    SavingsProfile::updateReturn(7.25);
-
-    customerOne.displayReturn();
-    customerTwo.displayReturn();
-    customerThree.displayReturn();
-
-    return 0;
+    a1.showRate();
+    a2.showRate();
+    a3.showRate();
 }
